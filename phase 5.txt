@@ -1,0 +1,34 @@
+Here is the code displayed in your third image:
+
+# Import the required library
+from sklearn.tree import DecisionTreeClassifier
+
+# Step 1: Create a simple dataset
+# Features = [rainfall_mm, river_level_m]
+X = [
+    [100, 4.5],  # Flood
+    [70, 1.2],   # No Flood
+    [120, 5.1],  # Flood
+    [50, 2.0],   # No Flood
+    [130, 4.8]   # Flood
+]
+
+# Labels: 1 = Flood, 0 = No Flood
+y = [1, 0, 1, 0, 1]
+
+# Step 2: Train the model
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+# Step 3: Make a prediction
+new_data = [[90, 4.0]]  # New example: 90mm rain, 4.0m river
+prediction = model.predict(new_data)
+
+# Step 4: Show the output
+print("Prediction for input (90mm, 4.0m):")
+if prediction[0] == 1:
+    print("Flood Risk: High")
+else:
+    print("Flood Risk: Low")
+
+In this case, the model predicts a high flood risk for the input [90mm rainfall, 4.0m river level].
