@@ -1,0 +1,28 @@
+Here is the code displayed in your second image:
+
+from sklearn.tree import DecisionTreeClassifier
+
+# Simple dataset: [rainfall_mm, river_level_m]
+X = [
+    [100, 4.5],  # Flood
+    [70, 1.2],   # No Flood
+    [120, 5.5],  # Flood
+    [50, 2.0],   # No Flood
+    [130, 4.8]   # Flood
+]
+
+# Labels: 1 = Flood, 0 = No Flood
+y = [1, 0, 1, 0, 1]
+
+# Train a simple Decision Tree model
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+# Predict flood risk for new weather input
+new_input = [[90, 4.0]]  # 90mm rainfall, 4m river
+prediction = model.predict(new_input)
+
+# Print outcome
+print("Flood Prediction (1=Flood, 0=No Flood):", prediction[0])
+
+The model is trained to predict the risk of a flood based on rainfall and river level. In this case, the input [90, 4.0] yields a prediction of 1, which means a flood is predicted.
